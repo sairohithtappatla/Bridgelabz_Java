@@ -1,4 +1,4 @@
-package level1;
+package coreProgramming.javaProgrammingElement.level1;
 
 public class HarryAge {
     public static void main(String[] args) {
@@ -9,3 +9,4 @@ public class HarryAge {
         System.out.println("Harry's age in 2024 is " + age);
     }
 }
+

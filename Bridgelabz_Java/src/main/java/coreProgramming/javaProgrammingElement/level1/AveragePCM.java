@@ -1,4 +1,4 @@
-package level1;
+package  coreProgramming.javaProgrammingElement.level1;
 
 public class AveragePCM {
     public static void main(String[] args) {
@@ -11,3 +11,4 @@ public class AveragePCM {
         System.out.println("Sam's average mark in PCM is " + averageMarks);
     }
 }
+

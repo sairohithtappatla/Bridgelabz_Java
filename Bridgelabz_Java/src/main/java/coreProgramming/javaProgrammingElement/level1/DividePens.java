@@ -1,4 +1,4 @@
-package level1;
+package coreProgramming.javaProgrammingElement.level1;
 
 public class DividePens {
     public static void main(String[] args) {
@@ -12,3 +12,4 @@ public class DividePens {
                 " and the remaining pen not distributed is " + remainingPens);
     }
 }
+

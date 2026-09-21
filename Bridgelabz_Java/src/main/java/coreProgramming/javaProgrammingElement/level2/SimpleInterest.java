@@ -1,4 +1,4 @@
-package level2;
+package coreProgramming.javaProgrammingElement.level2;
 
 import java.util.Scanner;
 
@@ -28,3 +28,4 @@ public class SimpleInterest {
         input.close();
     }
 }
+

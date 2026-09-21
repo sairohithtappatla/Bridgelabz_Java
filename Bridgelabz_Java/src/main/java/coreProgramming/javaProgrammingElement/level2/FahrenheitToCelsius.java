@@ -1,4 +1,4 @@
-package level2;
+package coreProgramming.javaProgrammingElement.level2;
 
 import java.util.Scanner;
 
@@ -20,3 +20,4 @@ public class FahrenheitToCelsius {
         input.close();
     }
 }
+

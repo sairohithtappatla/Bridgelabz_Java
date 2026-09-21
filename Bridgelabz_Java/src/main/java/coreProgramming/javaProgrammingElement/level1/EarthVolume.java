@@ -1,4 +1,4 @@
-package level1;
+package coreProgramming.javaProgrammingElement.level1;
 
 public class EarthVolume {
     public static void main(String[] args) {
@@ -13,3 +13,4 @@ public class EarthVolume {
                 volumeKm + " and cubic miles is " + volumeMiles);
     }
 }
+

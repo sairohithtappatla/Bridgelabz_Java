@@ -1,4 +1,4 @@
-package level1;
+package coreProgramming.javaProgrammingElement.level1;
 
 import java.util.Scanner;
 
@@ -20,3 +20,4 @@ public class HeightConversion {
         input.close();
     }
 }
+

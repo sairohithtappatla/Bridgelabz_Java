@@ -1,4 +1,4 @@
-package level1;
+package coreProgramming.javaProgrammingElement.level1;
 
 public class ProfitLoss {
     public static void main(String[] args) {
@@ -14,3 +14,4 @@ public class ProfitLoss {
                 " and the Profit Percentage is " + profitPercentage);
     }
 }
+
