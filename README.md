@@ -1,6 +1,26 @@
 # 📅 Daily Progress
 
 <details>
+<summary><strong>22-09-2026 — Java Arrays</strong></summary>
+
+### What I have done
+- Started learning Java Arrays.
+- Learned one-dimensional and multi-dimensional arrays.
+- Practiced array creation, initialization, traversal, and accessing elements.
+- Completed Java Arrays Level 1 and working on Level 2 lab practice programs.
+- Practiced problems involving digit arrays, 2D arrays, searching, calculations, BMI.
+- Followed best programming practices including proper naming, validation, comments, indentation, and using the `array.length` property.
+- Compiled and pushed the Java Arrays Level 1 and Level 2 programs to GitHub.
+
+### What I will do
+- Continue with the next Java programming topic and practice the concepts through lab problems.
+
+### Issues faced
+- No major issues faced. Practiced debugging and compilation while working with arrays.
+</details>
+
+
+<details>
 <summary><strong>21-09-2026 — Java Control Flows</strong></summary>
 
 ### What I have done
