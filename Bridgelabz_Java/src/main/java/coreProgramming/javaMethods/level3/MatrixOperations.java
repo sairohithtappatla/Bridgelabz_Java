@@ -2,229 +2,215 @@ package coreProgramming.javaMethods.level3;
 
 public class MatrixOperations {
 
-    public static double[][] createRandomMatrix(
-            int rows, int columns) {
+    // Method to create a random matrix
+    public static double[][] createRandomMatrix(int rows, int columns) {
 
+        // Create matrix
         double[][] matrix = new double[rows][columns];
 
+        // Generate random values
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                matrix[i][j] =
-                    1 + (int) (Math.random() * 9);
+
+                // Generate value from 1 to 9
+                matrix[i][j] = (int) (Math.random() * 9) + 1;
             }
         }
 
+        // Return matrix
         return matrix;
     }
 
-    public static double[][] addMatrices(
-            double[][] first, double[][] second) {
+    // Method to add two matrices
+    public static double[][] add(
+            double[][] first,
+            double[][] second) {
 
+        // Create result matrix
         double[][] result =
             new double[first.length][first[0].length];
 
+        // Add corresponding elements
         for (int i = 0; i < first.length; i++) {
-            for (int j = 0; j < first[i].length; j++) {
-                result[i][j] =
-                    first[i][j] + second[i][j];
+            for (int j = 0; j < first[0].length; j++) {
+                result[i][j] = first[i][j] + second[i][j];
             }
         }
 
+        // Return result
         return result;
     }
 
-    public static double[][] subtractMatrices(
-            double[][] first, double[][] second) {
+    // Method to subtract two matrices
+    public static double[][] subtract(
+            double[][] first,
+            double[][] second) {
 
+        // Create result matrix
         double[][] result =
             new double[first.length][first[0].length];
 
+        // Subtract corresponding elements
         for (int i = 0; i < first.length; i++) {
-            for (int j = 0; j < first[i].length; j++) {
-                result[i][j] =
-                    first[i][j] - second[i][j];
+            for (int j = 0; j < first[0].length; j++) {
+                result[i][j] = first[i][j] - second[i][j];
             }
         }
 
+        // Return result
         return result;
     }
 
-    public static double[][] multiplyMatrices(
-            double[][] first, double[][] second) {
+    // Method to multiply two matrices
+    public static double[][] multiply(
+            double[][] first,
+            double[][] second) {
 
+        // Create result matrix
         double[][] result =
             new double[first.length][second[0].length];
 
+        // Perform matrix multiplication
         for (int i = 0; i < first.length; i++) {
             for (int j = 0; j < second[0].length; j++) {
                 for (int k = 0; k < second.length; k++) {
-                    result[i][j] +=
-                        first[i][k] * second[k][j];
+
+                    // Add multiplication result
+                    result[i][j] += first[i][k] * second[k][j];
                 }
             }
         }
 
+        // Return result
         return result;
     }
 
+    // Method to find transpose
     public static double[][] transpose(double[][] matrix) {
 
+        // Create transposed matrix
         double[][] result =
             new double[matrix[0].length][matrix.length];
 
+        // Swap rows and columns
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
+            for (int j = 0; j < matrix[0].length; j++) {
                 result[j][i] = matrix[i][j];
             }
         }
 
+        // Return transpose
         return result;
     }
 
+    // Method to find determinant of 2x2 matrix
     public static double determinant2x2(double[][] matrix) {
 
+        // Apply determinant formula
         return matrix[0][0] * matrix[1][1]
-                - matrix[0][1] * matrix[1][0];
+             - matrix[0][1] * matrix[1][0];
     }
 
+    // Method to find determinant of 3x3 matrix
     public static double determinant3x3(double[][] matrix) {
 
+        // Apply 3x3 determinant formula
         return matrix[0][0] *
                     (matrix[1][1] * matrix[2][2]
-                    - matrix[1][2] * matrix[2][1])
-                - matrix[0][1] *
+                   - matrix[1][2] * matrix[2][1])
+             - matrix[0][1] *
                     (matrix[1][0] * matrix[2][2]
-                    - matrix[1][2] * matrix[2][0])
-                + matrix[0][2] *
+                   - matrix[1][2] * matrix[2][0])
+             + matrix[0][2] *
                     (matrix[1][0] * matrix[2][1]
-                    - matrix[1][1] * matrix[2][0]);
+                   - matrix[1][1] * matrix[2][0]);
     }
 
+    // Method to find inverse of 2x2 matrix
     public static double[][] inverse2x2(double[][] matrix) {
 
+        // Calculate determinant
         double determinant = determinant2x2(matrix);
 
+        // Return null for singular matrix
         if (determinant == 0) {
             return null;
         }
 
+        // Create inverse matrix
         double[][] inverse = new double[2][2];
 
+        // Apply inverse formula
         inverse[0][0] = matrix[1][1] / determinant;
         inverse[0][1] = -matrix[0][1] / determinant;
         inverse[1][0] = -matrix[1][0] / determinant;
         inverse[1][1] = matrix[0][0] / determinant;
 
+        // Return inverse
         return inverse;
     }
 
-    public static double[][] inverse3x3(double[][] matrix) {
-
-        double determinant = determinant3x3(matrix);
-
-        if (determinant == 0) {
-            return null;
-        }
-
-        double[][] inverse = new double[3][3];
-
-        inverse[0][0] =
-            (matrix[1][1] * matrix[2][2]
-            - matrix[1][2] * matrix[2][1]) / determinant;
-
-        inverse[0][1] =
-            (matrix[0][2] * matrix[2][1]
-            - matrix[0][1] * matrix[2][2]) / determinant;
-
-        inverse[0][2] =
-            (matrix[0][1] * matrix[1][2]
-            - matrix[0][2] * matrix[1][1]) / determinant;
-
-        inverse[1][0] =
-            (matrix[1][2] * matrix[2][0]
-            - matrix[1][0] * matrix[2][2]) / determinant;
-
-        inverse[1][1] =
-            (matrix[0][0] * matrix[2][2]
-            - matrix[0][2] * matrix[2][0]) / determinant;
-
-        inverse[1][2] =
-            (matrix[0][2] * matrix[1][0]
-            - matrix[0][0] * matrix[1][2]) / determinant;
-
-        inverse[2][0] =
-            (matrix[1][0] * matrix[2][1]
-            - matrix[1][1] * matrix[2][0]) / determinant;
-
-        inverse[2][1] =
-            (matrix[0][1] * matrix[2][0]
-            - matrix[0][0] * matrix[2][1]) / determinant;
-
-        inverse[2][2] =
-            (matrix[0][0] * matrix[1][1]
-            - matrix[0][1] * matrix[1][0]) / determinant;
-
-        return inverse;
-    }
-
+    // Method to display a matrix
     public static void displayMatrix(double[][] matrix) {
 
-        if (matrix == null) {
-            System.out.println("Matrix is not invertible.");
-            return;
-        }
+        // Display every row
+        for (int i = 0; i < matrix.length; i++) {
 
-        for (double[] row : matrix) {
-
-            for (double value : row) {
-                System.out.printf("%8.2f", value);
+            // Display every element
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.printf("%8.2f", matrix[i][j]);
             }
 
+            // Move to next row
             System.out.println();
         }
     }
 
     public static void main(String[] args) {
 
-        double[][] first = createRandomMatrix(3, 3);
-        double[][] second = createRandomMatrix(3, 3);
+        // Create two random 2x2 matrices
+        double[][] first = createRandomMatrix(2, 2);
+        double[][] second = createRandomMatrix(2, 2);
 
-        System.out.println("Matrix A:");
+        // Display first matrix
+        System.out.println("First Matrix:");
         displayMatrix(first);
 
-        System.out.println("\nMatrix B:");
+        // Display second matrix
+        System.out.println("\nSecond Matrix:");
         displayMatrix(second);
 
-        System.out.println("\nA + B:");
-        displayMatrix(addMatrices(first, second));
+        // Add matrices
+        System.out.println("\nAddition:");
+        displayMatrix(add(first, second));
 
-        System.out.println("\nA - B:");
-        displayMatrix(subtractMatrices(first, second));
+        // Subtract matrices
+        System.out.println("\nSubtraction:");
+        displayMatrix(subtract(first, second));
 
-        System.out.println("\nA * B:");
-        displayMatrix(multiplyMatrices(first, second));
+        // Multiply matrices
+        System.out.println("\nMultiplication:");
+        displayMatrix(multiply(first, second));
 
-        System.out.println("\nTranspose of A:");
+        // Display transpose
+        System.out.println("\nTranspose of First Matrix:");
         displayMatrix(transpose(first));
 
-        System.out.println("\nDeterminant of A:");
-        System.out.println(determinant3x3(first));
+        // Find determinant
+        double determinant = determinant2x2(first);
 
-        System.out.println("\nInverse of A:");
-        displayMatrix(inverse3x3(first));
+        // Display determinant
+        System.out.println("\nDeterminant of First Matrix: " + determinant);
 
-        double[][] matrix2x2 = {
-            {4, 7},
-            {2, 6}
-        };
+        // Find inverse
+        double[][] inverse = inverse2x2(first);
 
-        System.out.println("\n2x2 Matrix:");
-        displayMatrix(matrix2x2);
-
-        System.out.println("\n2x2 Determinant:");
-        System.out.println(determinant2x2(matrix2x2));
-
-        System.out.println("\n2x2 Inverse:");
-        displayMatrix(inverse2x2(matrix2x2));
+        // Display inverse when available
+        if (inverse != null) {
+            System.out.println("\nInverse of First Matrix:");
+            displayMatrix(inverse);
+        } else {
+            System.out.println("\nFirst Matrix has no inverse.");
+        }
     }
 }

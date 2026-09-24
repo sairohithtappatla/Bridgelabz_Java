@@ -2,41 +2,54 @@ package coreProgramming.javaMethods.level3;
 
 public class UniqueOtp {
 
+    // Method to generate a six-digit OTP
     public static int generateOtp() {
-        return 100000 + (int) (Math.random() * 900000);
+
+        // Generate OTP between 100000 and 999999
+        return (int) (Math.random() * 900000) + 100000;
     }
 
-    public static boolean areUnique(int[] otps) {
+    // Method to check whether an OTP already exists
+    public static boolean isUnique(int[] otps, int count, int otp) {
 
-        for (int i = 0; i < otps.length; i++) {
-            for (int j = i + 1; j < otps.length; j++) {
-                if (otps[i] == otps[j]) {
-                    return false;
-                }
+        // Compare OTP with previously generated OTPs
+        for (int i = 0; i < count; i++) {
+
+            // Return false if duplicate is found
+            if (otps[i] == otp) {
+                return false;
             }
         }
 
+        // OTP is unique
         return true;
     }
 
     public static void main(String[] args) {
 
-        final int OTP_COUNT = 10;
+        // Create array to store 10 OTPs
+        int[] otps = new int[10];
 
-        int[] otps = new int[OTP_COUNT];
-
+        // Generate 10 unique OTPs
         for (int i = 0; i < otps.length; i++) {
-            otps[i] = generateOtp();
+
+            // Generate initial OTP
+            int otp = generateOtp();
+
+            // Regenerate while duplicate exists
+            while (!isUnique(otps, i, otp)) {
+                otp = generateOtp();
+            }
+
+            // Store unique OTP
+            otps[i] = otp;
         }
 
-        System.out.println("Generated OTPs:");
+        // Display generated OTPs
+        System.out.println("Unique OTPs:");
 
         for (int otp : otps) {
             System.out.println(otp);
         }
-
-        System.out.println(
-            "All OTPs are unique: " + areUnique(otps)
-        );
     }
 }
