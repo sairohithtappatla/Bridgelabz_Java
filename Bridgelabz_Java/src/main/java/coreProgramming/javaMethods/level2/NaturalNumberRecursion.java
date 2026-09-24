@@ -4,46 +4,41 @@ import java.util.Scanner;
 
 public class NaturalNumberRecursion {
 
-    // Method to calculate sum using recursion
-    public static int recursiveSum(int number) {
+    // Method to calculate the sum of natural numbers using recursion
+    public static int sumNaturalNumbers(int number) {
 
-        if (number == 1) {
-            return 1;
+        // Base condition
+        if (number <= 1) {
+            return number;
         }
 
-        return number + recursiveSum(number - 1);
-    }
-
-    // Method to calculate sum using formula
-    public static int formulaSum(int number) {
-        return number * (number + 1) / 2;
+        // Recursive calculation
+        return number + sumNaturalNumbers(number - 1);
     }
 
     public static void main(String[] args) {
 
+        // Create Scanner object for user input
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter a natural number: ");
+        // Get the number from the user
+        System.out.print("Enter a positive integer: ");
         int number = input.nextInt();
 
-        if (number < 1) {
-            System.err.println("Invalid natural number.");
+        // Validate the input
+        if (number <= 0) {
+            System.out.println("Invalid input. Enter a positive integer.");
             input.close();
             return;
         }
 
-        int recursiveResult = recursiveSum(number);
-        int formulaResult = formulaSum(number);
+        // Calculate the sum
+        int sum = sumNaturalNumbers(number);
 
-        System.out.println("Sum using recursion: " + recursiveResult);
-        System.out.println("Sum using formula: " + formulaResult);
+        // Display the result
+        System.out.println("Sum of natural numbers: " + sum);
 
-        if (recursiveResult == formulaResult) {
-            System.out.println("Both results are correct and equal.");
-        } else {
-            System.out.println("Results are different.");
-        }
-
+        // Close Scanner
         input.close();
     }
 }

@@ -5,74 +5,65 @@ import java.util.Scanner;
 public class BMIMethods {
 
     // Method to calculate BMI
-    public static double calculateBMI(double weight, double heightCm) {
+    public static double calculateBMI(double weight, double height) {
 
-        double heightMeters = heightCm / 100;
-
-        return weight / (heightMeters * heightMeters);
+        // Calculate BMI using weight in kilograms and height in meters
+        return weight / (height * height);
     }
 
-    // Method to determine BMI status
-    public static String determineBMIStatus(double bmi) {
+    // Method to classify BMI
+    public static String classifyBMI(double bmi) {
 
+        // Check underweight condition
         if (bmi < 18.5) {
             return "Underweight";
-        } else if (bmi < 25) {
-            return "Normal";
-        } else if (bmi < 30) {
-            return "Overweight";
-        } else {
-            return "Obese";
         }
+
+        // Check normal weight condition
+        if (bmi < 25) {
+            return "Normal";
+        }
+
+        // Check overweight condition
+        if (bmi < 30) {
+            return "Overweight";
+        }
+
+        // Return obesity classification
+        return "Obese";
     }
 
     public static void main(String[] args) {
 
+        // Create Scanner object for user input
         Scanner input = new Scanner(System.in);
 
-        final int PERSON_COUNT = 10;
+        // Get weight from the user
+        System.out.print("Enter weight in kilograms: ");
+        double weight = input.nextDouble();
 
-        // Column 0 = weight
-        // Column 1 = height in cm
-        // Column 2 = BMI
-        double[][] personData = new double[PERSON_COUNT][3];
+        // Get height from the user
+        System.out.print("Enter height in meters: ");
+        double height = input.nextDouble();
 
-        for (int i = 0; i < personData.length; i++) {
-
-            System.out.println("\nPerson " + (i + 1));
-
-            System.out.print("Enter weight in kg: ");
-            double weight = input.nextDouble();
-
-            System.out.print("Enter height in cm: ");
-            double height = input.nextDouble();
-
-            if (weight <= 0 || height <= 0) {
-                System.err.println("Invalid input.");
-                i--;
-                continue;
-            }
-
-            personData[i][0] = weight;
-            personData[i][1] = height;
-            personData[i][2] = calculateBMI(weight, height);
+        // Validate weight and height
+        if (weight <= 0 || height <= 0) {
+            System.out.println("Weight and height must be positive.");
+            input.close();
+            return;
         }
 
-        System.out.println("\nBMI Details:");
+        // Calculate BMI
+        double bmi = calculateBMI(weight, height);
 
-        for (int i = 0; i < personData.length; i++) {
+        // Classify BMI
+        String category = classifyBMI(bmi);
 
-            String status = determineBMIStatus(personData[i][2]);
+        // Display results
+        System.out.printf("BMI: %.2f%n", bmi);
+        System.out.println("Category: " + category);
 
-            System.out.println(
-                "Person " + (i + 1)
-                + " | Weight: " + personData[i][0] + " kg"
-                + " | Height: " + personData[i][1] + " cm"
-                + " | BMI: " + personData[i][2]
-                + " | Status: " + status
-            );
-        }
-
+        // Close Scanner
         input.close();
     }
 }

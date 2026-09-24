@@ -1,57 +1,129 @@
 package coreProgramming.javaMethods.level2;
 
+import java.util.Scanner;
+import java.util.Random;
+
 public class RandomArrayStatistics {
 
-    // Method to generate 4 digit random numbers
-    public static int[] generate4DigitRandomArray(int size) {
+    // Method to generate a random array
+    public static int[] generateRandomArray(int size) {
 
+        // Create array with the requested size
         int[] numbers = new int[size];
 
+        // Create Random object
+        Random random = new Random();
+
+        // Generate random values
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = (int) (Math.random() * 9000) + 1000;
+            numbers[i] = random.nextInt(100);
         }
 
+        // Return generated array
         return numbers;
     }
 
-    // Method to find average, minimum and maximum
-    public static double[] findAverageMinMax(int[] numbers) {
+    // Method to calculate the sum of array elements
+    public static int calculateSum(int[] numbers) {
 
-        double sum = 0;
-        int minimum = numbers[0];
-        int maximum = numbers[0];
+        // Initialize sum
+        int sum = 0;
 
+        // Add all array elements
         for (int number : numbers) {
-
             sum += number;
-
-            minimum = Math.min(minimum, number);
-            maximum = Math.max(maximum, number);
         }
 
-        double average = sum / numbers.length;
+        // Return sum
+        return sum;
+    }
 
-        return new double[]{average, minimum, maximum};
+    // Method to calculate the average
+    public static double calculateAverage(int[] numbers) {
+
+        // Calculate total sum
+        int sum = calculateSum(numbers);
+
+        // Calculate and return average
+        return (double) sum / numbers.length;
+    }
+
+    // Method to find the minimum value
+    public static int findMinimum(int[] numbers) {
+
+        // Assume first element is minimum
+        int minimum = numbers[0];
+
+        // Compare all elements
+        for (int number : numbers) {
+
+            // Update minimum when smaller value is found
+            if (number < minimum) {
+                minimum = number;
+            }
+        }
+
+        // Return minimum value
+        return minimum;
+    }
+
+    // Method to find the maximum value
+    public static int findMaximum(int[] numbers) {
+
+        // Assume first element is maximum
+        int maximum = numbers[0];
+
+        // Compare all elements
+        for (int number : numbers) {
+
+            // Update maximum when greater value is found
+            if (number > maximum) {
+                maximum = number;
+            }
+        }
+
+        // Return maximum value
+        return maximum;
     }
 
     public static void main(String[] args) {
 
-        final int SIZE = 5;
+        // Create Scanner object for user input
+        Scanner input = new Scanner(System.in);
 
-        int[] numbers = generate4DigitRandomArray(SIZE);
+        // Get array size
+        System.out.print("Enter array size: ");
+        int size = input.nextInt();
 
-        System.out.print("Generated numbers: ");
+        // Validate array size
+        if (size <= 0) {
+            System.out.println("Array size must be positive.");
+            input.close();
+            return;
+        }
 
+        // Generate random array
+        int[] numbers = generateRandomArray(size);
+
+        // Display array elements
+        System.out.print("Array: ");
         for (int number : numbers) {
             System.out.print(number + " ");
         }
 
-        System.out.println();
+        // Calculate statistics
+        int sum = calculateSum(numbers);
+        double average = calculateAverage(numbers);
+        int minimum = findMinimum(numbers);
+        int maximum = findMaximum(numbers);
 
-        double[] result = findAverageMinMax(numbers);
+        // Display statistics
+        System.out.println("\nSum: " + sum);
+        System.out.println("Average: " + average);
+        System.out.println("Minimum: " + minimum);
+        System.out.println("Maximum: " + maximum);
 
-        System.out.println("Average: " + result[0]);
-        System.out.println("Minimum: " + result[1]);
-        System.out.println("Maximum: " + result[2]);
+        // Close Scanner
+        input.close();
     }
 }

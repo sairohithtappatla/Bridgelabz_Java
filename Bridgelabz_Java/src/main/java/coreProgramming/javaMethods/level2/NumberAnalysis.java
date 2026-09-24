@@ -4,65 +4,95 @@ import java.util.Scanner;
 
 public class NumberAnalysis {
 
-    // Method to check positive number
-    public static boolean isPositive(int number) {
-        return number > 0;
-    }
+    // Method to count the number of digits
+    public static int countDigits(int number) {
 
-    // Method to check even number
-    public static boolean isEven(int number) {
-        return number % 2 == 0;
-    }
+        // Convert negative number to positive
+        number = Math.abs(number);
 
-    // Method to compare two numbers
-    public static int compare(int number1, int number2) {
-
-        if (number1 > number2) {
+        // Handle zero separately
+        if (number == 0) {
             return 1;
         }
 
-        if (number1 == number2) {
-            return 0;
+        // Initialize digit count
+        int count = 0;
+
+        // Count digits
+        while (number > 0) {
+            number /= 10;
+            count++;
         }
 
-        return -1;
+        // Return digit count
+        return count;
+    }
+
+    // Method to find the sum of digits
+    public static int sumDigits(int number) {
+
+        // Convert negative number to positive
+        number = Math.abs(number);
+
+        // Initialize sum
+        int sum = 0;
+
+        // Extract and add each digit
+        while (number > 0) {
+            sum += number % 10;
+            number /= 10;
+        }
+
+        // Return digit sum
+        return sum;
+    }
+
+    // Method to reverse a number
+    public static int reverseNumber(int number) {
+
+        // Store sign of the number
+        int sign = number < 0 ? -1 : 1;
+
+        // Work with positive value
+        number = Math.abs(number);
+
+        // Initialize reversed number
+        int reverse = 0;
+
+        // Reverse the digits
+        while (number > 0) {
+            reverse = reverse * 10 + number % 10;
+            number /= 10;
+        }
+
+        // Return reversed number with original sign
+        return reverse * sign;
     }
 
     public static void main(String[] args) {
 
+        // Create Scanner object for user input
         Scanner input = new Scanner(System.in);
 
-        final int NUMBER_COUNT = 5;
-        int[] numbers = new int[NUMBER_COUNT];
+        // Get number from the user
+        System.out.print("Enter an integer: ");
+        int number = input.nextInt();
 
-        for (int i = 0; i < numbers.length; i++) {
+        // Calculate number of digits
+        int digitCount = countDigits(number);
 
-            System.out.print("Enter number " + (i + 1) + ": ");
-            numbers[i] = input.nextInt();
+        // Calculate sum of digits
+        int digitSum = sumDigits(number);
 
-            if (isPositive(numbers[i])) {
+        // Reverse the number
+        int reversed = reverseNumber(number);
 
-                if (isEven(numbers[i])) {
-                    System.out.println("Positive and Even");
-                } else {
-                    System.out.println("Positive and Odd");
-                }
+        // Display results
+        System.out.println("Number of digits: " + digitCount);
+        System.out.println("Sum of digits: " + digitSum);
+        System.out.println("Reversed number: " + reversed);
 
-            } else {
-                System.out.println("Negative");
-            }
-        }
-
-        int comparison = compare(numbers[0], numbers[numbers.length - 1]);
-
-        if (comparison == 1) {
-            System.out.println("First element is greater than last element.");
-        } else if (comparison == 0) {
-            System.out.println("First element is equal to last element.");
-        } else {
-            System.out.println("First element is less than last element.");
-        }
-
+        // Close Scanner
         input.close();
     }
 }

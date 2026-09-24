@@ -4,70 +4,83 @@ import java.util.Scanner;
 
 public class YoungestTallest {
 
-    // Method to find index of youngest friend
+    // Method to find the youngest age
     public static int findYoungest(int[] ages) {
 
-        int youngestIndex = 0;
+        // Assume first age is the youngest
+        int youngest = ages[0];
 
-        for (int i = 1; i < ages.length; i++) {
-            if (ages[i] < ages[youngestIndex]) {
-                youngestIndex = i;
+        // Compare remaining ages
+        for (int age : ages) {
+
+            // Update youngest when a smaller age is found
+            if (age < youngest) {
+                youngest = age;
             }
         }
 
-        return youngestIndex;
+        // Return youngest age
+        return youngest;
     }
 
-    // Method to find index of tallest friend
-    public static int findTallest(double[] heights) {
+    // Method to find the tallest height
+    public static double findTallest(double[] heights) {
 
-        int tallestIndex = 0;
+        // Assume first height is the tallest
+        double tallest = heights[0];
 
-        for (int i = 1; i < heights.length; i++) {
-            if (heights[i] > heights[tallestIndex]) {
-                tallestIndex = i;
+        // Compare remaining heights
+        for (double height : heights) {
+
+            // Update tallest when a greater height is found
+            if (height > tallest) {
+                tallest = height;
             }
         }
 
-        return tallestIndex;
+        // Return tallest height
+        return tallest;
     }
 
     public static void main(String[] args) {
 
+        // Create Scanner object for user input
         Scanner input = new Scanner(System.in);
 
-        String[] names = {"Amar", "Akbar", "Anthony"};
+        // Create arrays for ages and heights
         int[] ages = new int[3];
         double[] heights = new double[3];
 
-        for (int i = 0; i < names.length; i++) {
+        // Get age and height values
+        for (int i = 0; i < ages.length; i++) {
 
-            System.out.println("\nEnter details for " + names[i]);
-
-            System.out.print("Enter age: ");
+            // Get age
+            System.out.print("Enter age of person " + (i + 1) + ": ");
             ages[i] = input.nextInt();
 
-            System.out.print("Enter height: ");
+            // Get height
+            System.out.print("Enter height of person " + (i + 1) + ": ");
             heights[i] = input.nextDouble();
 
-            if (ages[i] <= 0 || heights[i] <= 0) {
-                System.err.println("Invalid input.");
+            // Validate age and height
+            if (ages[i] < 0 || heights[i] < 0) {
+                System.out.println("Age and height cannot be negative.");
                 input.close();
                 return;
             }
         }
 
-        int youngestIndex = findYoungest(ages);
-        int tallestIndex = findTallest(heights);
+        // Find youngest age
+        int youngest = findYoungest(ages);
 
-        System.out.println(
-            "Youngest friend: " + names[youngestIndex]
-        );
+        // Find tallest height
+        double tallest = findTallest(heights);
 
-        System.out.println(
-            "Tallest friend: " + names[tallestIndex]
-        );
+        // Display results
+        System.out.println("Youngest age: " + youngest);
+        System.out.println("Tallest height: " + tallest);
 
+        // Close Scanner
         input.close();
     }
 }

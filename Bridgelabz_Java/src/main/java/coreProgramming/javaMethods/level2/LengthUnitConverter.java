@@ -5,60 +5,94 @@ import java.util.Scanner;
 public class LengthUnitConverter {
 
     // Conversion constants
-    static final double YARDS_TO_FEET = 3;
-    static final double FEET_TO_YARDS = 0.333333;
-    static final double METERS_TO_INCHES = 39.3701;
-    static final double INCHES_TO_METERS = 0.0254;
-    static final double INCHES_TO_CENTIMETERS = 2.54;
+    static final double METER_TO_FEET = 3.28084;
+    static final double FEET_TO_METER = 0.3048;
+    static final double INCH_TO_CM = 2.54;
+    static final double CM_TO_INCH = 0.393701;
 
-    public static double convertYardsToFeet(double yards) {
-        return yards * YARDS_TO_FEET;
+    // Method to convert meters to feet
+    public static double meterToFeet(double meter) {
+
+        // Perform conversion
+        return meter * METER_TO_FEET;
     }
 
-    public static double convertFeetToYards(double feet) {
-        return feet * FEET_TO_YARDS;
+    // Method to convert feet to meters
+    public static double feetToMeter(double feet) {
+
+        // Perform conversion
+        return feet * FEET_TO_METER;
     }
 
-    public static double convertMetersToInches(double meters) {
-        return meters * METERS_TO_INCHES;
+    // Method to convert inches to centimeters
+    public static double inchToCentimeter(double inch) {
+
+        // Perform conversion
+        return inch * INCH_TO_CM;
     }
 
-    public static double convertInchesToMeters(double inches) {
-        return inches * INCHES_TO_METERS;
-    }
+    // Method to convert centimeters to inches
+    public static double centimeterToInch(double centimeter) {
 
-    public static double convertInchesToCentimeters(double inches) {
-        return inches * INCHES_TO_CENTIMETERS;
+        // Perform conversion
+        return centimeter * CM_TO_INCH;
     }
 
     public static void main(String[] args) {
 
+        // Create Scanner object for user input
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter yards: ");
-        double yards = input.nextDouble();
+        // Display conversion options
+        System.out.println("1. Meter to Feet");
+        System.out.println("2. Feet to Meter");
+        System.out.println("3. Inch to Centimeter");
+        System.out.println("4. Centimeter to Inch");
 
-        System.out.print("Enter feet: ");
-        double feet = input.nextDouble();
+        // Get conversion choice
+        System.out.print("Enter your choice: ");
+        int choice = input.nextInt();
 
-        System.out.print("Enter meters: ");
-        double meters = input.nextDouble();
+        // Get value from the user
+        System.out.print("Enter value: ");
+        double value = input.nextDouble();
 
-        System.out.print("Enter inches: ");
-        double inches = input.nextDouble();
-
-        if (yards < 0 || feet < 0 || meters < 0 || inches < 0) {
-            System.err.println("Values cannot be negative.");
+        // Validate the value
+        if (value < 0) {
+            System.out.println("Value cannot be negative.");
             input.close();
             return;
         }
 
-        System.out.println(yards + " yards = " + convertYardsToFeet(yards) + " feet");
-        System.out.println(feet + " feet = " + convertFeetToYards(feet) + " yards");
-        System.out.println(meters + " meters = " + convertMetersToInches(meters) + " inches");
-        System.out.println(inches + " inches = " + convertInchesToMeters(inches) + " meters");
-        System.out.println(inches + " inches = " + convertInchesToCentimeters(inches) + " centimeters");
+        // Perform selected conversion
+        switch (choice) {
 
+            case 1:
+                // Convert meter to feet
+                System.out.println("Result: " + meterToFeet(value));
+                break;
+
+            case 2:
+                // Convert feet to meter
+                System.out.println("Result: " + feetToMeter(value));
+                break;
+
+            case 3:
+                // Convert inch to centimeter
+                System.out.println("Result: " + inchToCentimeter(value));
+                break;
+
+            case 4:
+                // Convert centimeter to inch
+                System.out.println("Result: " + centimeterToInch(value));
+                break;
+
+            default:
+                // Handle invalid choice
+                System.out.println("Invalid choice.");
+        }
+
+        // Close Scanner
         input.close();
     }
 }

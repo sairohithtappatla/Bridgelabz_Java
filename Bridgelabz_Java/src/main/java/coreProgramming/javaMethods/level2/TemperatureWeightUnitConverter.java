@@ -5,93 +5,92 @@ import java.util.Scanner;
 public class TemperatureWeightUnitConverter {
 
     // Conversion constants
-    static final double POUNDS_TO_KILOGRAMS = 0.453592;
-    static final double KILOGRAMS_TO_POUNDS = 2.20462;
-    static final double GALLONS_TO_LITERS = 3.78541;
-    static final double LITERS_TO_GALLONS = 0.264172;
+    static final double POUND_TO_KG = 0.453592;
+    static final double KG_TO_POUND = 2.20462;
 
-    public static double convertFahrenheitToCelsius(double fahrenheit) {
-        return (fahrenheit - 32) * 5 / 9;
-    }
+    // Method to convert Celsius to Fahrenheit
+    public static double celsiusToFahrenheit(double celsius) {
 
-    public static double convertCelsiusToFahrenheit(double celsius) {
+        // Perform conversion
         return (celsius * 9 / 5) + 32;
     }
 
-    public static double convertPoundsToKilograms(double pounds) {
-        return pounds * POUNDS_TO_KILOGRAMS;
+    // Method to convert Fahrenheit to Celsius
+    public static double fahrenheitToCelsius(double fahrenheit) {
+
+        // Perform conversion
+        return (fahrenheit - 32) * 5 / 9;
     }
 
-    public static double convertKilogramsToPounds(double kilograms) {
-        return kilograms * KILOGRAMS_TO_POUNDS;
+    // Method to convert pounds to kilograms
+    public static double poundsToKilograms(double pounds) {
+
+        // Perform conversion
+        return pounds * POUND_TO_KG;
     }
 
-    public static double convertGallonsToLiters(double gallons) {
-        return gallons * GALLONS_TO_LITERS;
-    }
+    // Method to convert kilograms to pounds
+    public static double kilogramsToPounds(double kilograms) {
 
-    public static double convertLitersToGallons(double liters) {
-        return liters * LITERS_TO_GALLONS;
+        // Perform conversion
+        return kilograms * KG_TO_POUND;
     }
 
     public static void main(String[] args) {
 
+        // Create Scanner object for user input
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter Fahrenheit: ");
-        double fahrenheit = input.nextDouble();
+        // Display conversion options
+        System.out.println("1. Celsius to Fahrenheit");
+        System.out.println("2. Fahrenheit to Celsius");
+        System.out.println("3. Pounds to Kilograms");
+        System.out.println("4. Kilograms to Pounds");
 
-        System.out.print("Enter Celsius: ");
-        double celsius = input.nextDouble();
+        // Get conversion choice
+        System.out.print("Enter your choice: ");
+        int choice = input.nextInt();
 
-        System.out.print("Enter pounds: ");
-        double pounds = input.nextDouble();
+        // Get value from the user
+        System.out.print("Enter value: ");
+        double value = input.nextDouble();
 
-        System.out.print("Enter kilograms: ");
-        double kilograms = input.nextDouble();
-
-        System.out.print("Enter gallons: ");
-        double gallons = input.nextDouble();
-
-        System.out.print("Enter liters: ");
-        double liters = input.nextDouble();
-
-        if (pounds < 0 || kilograms < 0 || gallons < 0 || liters < 0) {
-            System.err.println("Weight and volume values cannot be negative.");
+        // Validate the weight value
+        if ((choice == 3 || choice == 4) && value < 0) {
+            System.out.println("Weight cannot be negative.");
             input.close();
             return;
         }
 
-        System.out.println(
-            fahrenheit + " Fahrenheit = "
-            + convertFahrenheitToCelsius(fahrenheit) + " Celsius"
-        );
+        // Perform selected conversion
+        switch (choice) {
 
-        System.out.println(
-            celsius + " Celsius = "
-            + convertCelsiusToFahrenheit(celsius) + " Fahrenheit"
-        );
+            case 1:
+                // Convert Celsius to Fahrenheit
+                System.out.println("Result: " + celsiusToFahrenheit(value));
+                break;
 
-        System.out.println(
-            pounds + " pounds = "
-            + convertPoundsToKilograms(pounds) + " kilograms"
-        );
+            case 2:
+                // Convert Fahrenheit to Celsius
+                System.out.println("Result: " + fahrenheitToCelsius(value));
+                break;
 
-        System.out.println(
-            kilograms + " kilograms = "
-            + convertKilogramsToPounds(kilograms) + " pounds"
-        );
+            case 3:
+                // Convert pounds to kilograms
+                System.out.println("Result: " + poundsToKilograms(value));
+                break;
 
-        System.out.println(
-            gallons + " gallons = "
-            + convertGallonsToLiters(gallons) + " liters"
-        );
+            case 4:
+                // Convert kilograms to pounds
+                System.out.println("Result: " + kilogramsToPounds(value));
+                break;
 
-        System.out.println(
-            liters + " liters = "
-            + convertLitersToGallons(liters) + " gallons"
-        );
+            default:
+                // Handle invalid choice
+                System.out.println("Invalid choice.");
+        }
 
+        // Close Scanner
         input.close();
     }
 }

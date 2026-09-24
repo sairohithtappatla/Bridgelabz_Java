@@ -7,33 +7,46 @@ public class LeapYear {
     // Method to check whether a year is a leap year
     public static boolean isLeapYear(int year) {
 
-        if (year < 1582) {
+        // Check the leap year conditions
+        if (year % 400 == 0) {
+            return true;
+        }
+
+        if (year % 100 == 0) {
             return false;
         }
 
-        return (year % 400 == 0)
-                || (year % 4 == 0 && year % 100 != 0);
+        // Check whether the year is divisible by 4
+        return year % 4 == 0;
     }
 
     public static void main(String[] args) {
 
+        // Create Scanner object for user input
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter year: ");
+        // Get the year from the user
+        System.out.print("Enter a year: ");
         int year = input.nextInt();
 
-        if (year < 1582) {
-            System.err.println("Year must be 1582 or later.");
+        // Validate the year
+        if (year <= 0) {
+            System.out.println("Invalid year.");
             input.close();
             return;
         }
 
-        if (isLeapYear(year)) {
+        // Check whether the year is a leap year
+        boolean leapYear = isLeapYear(year);
+
+        // Display the result
+        if (leapYear) {
             System.out.println(year + " is a Leap Year.");
         } else {
             System.out.println(year + " is not a Leap Year.");
         }
 
+        // Close Scanner
         input.close();
     }
 }

@@ -7,52 +7,69 @@ public class DistanceUnitConverter {
     // Conversion constants
     static final double KM_TO_MILES = 0.621371;
     static final double MILES_TO_KM = 1.60934;
-    static final double METERS_TO_FEET = 3.28084;
-    static final double FEET_TO_METERS = 0.3048;
 
-    public static double convertKmToMiles(double km) {
-        return km * KM_TO_MILES;
+    // Method to convert kilometers to miles
+    public static double kilometersToMiles(double kilometers) {
+
+        // Perform conversion
+        return kilometers * KM_TO_MILES;
     }
 
-    public static double convertMilesToKm(double miles) {
+    // Method to convert miles to kilometers
+    public static double milesToKilometers(double miles) {
+
+        // Perform conversion
         return miles * MILES_TO_KM;
-    }
-
-    public static double convertMetersToFeet(double meters) {
-        return meters * METERS_TO_FEET;
-    }
-
-    public static double convertFeetToMeters(double feet) {
-        return feet * FEET_TO_METERS;
     }
 
     public static void main(String[] args) {
 
+        // Create Scanner object for user input
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter kilometers: ");
-        double km = input.nextDouble();
+        // Display conversion options
+        System.out.println("1. Kilometers to Miles");
+        System.out.println("2. Miles to Kilometers");
 
-        System.out.print("Enter miles: ");
-        double miles = input.nextDouble();
+        // Get conversion choice
+        System.out.print("Enter your choice: ");
+        int choice = input.nextInt();
 
-        System.out.print("Enter meters: ");
-        double meters = input.nextDouble();
+        // Get distance from the user
+        System.out.print("Enter distance: ");
+        double distance = input.nextDouble();
 
-        System.out.print("Enter feet: ");
-        double feet = input.nextDouble();
-
-        if (km < 0 || miles < 0 || meters < 0 || feet < 0) {
-            System.err.println("Values cannot be negative.");
+        // Validate the distance
+        if (distance < 0) {
+            System.out.println("Distance cannot be negative.");
             input.close();
             return;
         }
 
-        System.out.println(km + " km = " + convertKmToMiles(km) + " miles");
-        System.out.println(miles + " miles = " + convertMilesToKm(miles) + " km");
-        System.out.println(meters + " meters = " + convertMetersToFeet(meters) + " feet");
-        System.out.println(feet + " feet = " + convertFeetToMeters(feet) + " meters");
+        // Perform selected conversion
+        if (choice == 1) {
 
+            // Convert kilometers to miles
+            double result = kilometersToMiles(distance);
+
+            // Display result
+            System.out.println("Distance in miles: " + result);
+
+        } else if (choice == 2) {
+
+            // Convert miles to kilometers
+            double result = milesToKilometers(distance);
+
+            // Display result
+            System.out.println("Distance in kilometers: " + result);
+
+        } else {
+
+            // Handle invalid choice
+            System.out.println("Invalid choice.");
+        }
+
+        // Close Scanner
         input.close();
     }
 }
