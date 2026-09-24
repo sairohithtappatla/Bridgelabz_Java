@@ -1,6 +1,27 @@
 # 📅 Daily Progress
 
 <details>
+<summary><strong>23-09-2026 — Java Methods</strong></summary>
+
+### What I have done
+- Started learning Java Methods.
+- Learned how methods help divide a program into smaller, reusable blocks of logic.
+- Practiced methods with parameters, return values, and static methods.
+- Completed Java Methods Level 1, Level 2 and working on Level 3 practice programs.
+- Practiced problems involving number checking, arrays, mathematical calculations, OTP generation, calendars, employee bonuses, student scorecards, and matrix operations.
+- Followed best programming practices including proper naming conventions, meaningful method names, comments, validation, indentation, and using methods to improve code reusability.
+- Compiled and pushed the Java Methods Level 1 and Level 2 programs to GitHub.
+
+### What I will do
+- Continue with the level 3 .
+- Practice the concepts through the provided lab problems and improve problem-solving skills.
+
+### Issues faced
+- No major issues faced. Practiced debugging and compilation while working with arrays.
+</details>
+
+
+<details>
 <summary><strong>22-09-2026 — Java Arrays</strong></summary>
 
 ### What I have done
