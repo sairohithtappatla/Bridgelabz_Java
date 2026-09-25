@@ -1,6 +1,53 @@
 # 📅 Daily Progress
 
 <details>
+<summary><strong>25-09-2026 — Java Strings</strong></summary>
+  
+### What I have done
+- Started learning **Java Strings**.
+- Learned and practiced string manipulation and character-level operations.
+- Completed **Java Strings Level 1, Level 2, and Level 3** practice programs.
+- Practiced problems involving string operations, character handling, searching, comparison, frequency counting, palindrome checking, anagrams, and other string-based problem-solving techniques.
+- Practiced advanced string problems involving `charAt()`, `toCharArray()`, nested loops, character frequency, palindrome approaches, anagram checking, calendar generation, and card deck operations.
+- Followed best programming practices including proper naming conventions, meaningful variable and method names, comments for logical blocks, input validation, indentation, and modular methods.
+- Compiled and pushed the Java Strings Level 1, Level 2, and Level 3 programs to GitHub.
+
+### What I will do
+- Continue with the next Java programming topic.
+- Practice the concepts through the provided lab problems.
+- Improve problem-solving and code implementation skills.
+
+### Issues faced
+- No major issues faced.
+- Practiced debugging and compilation while working with Java Strings and character-based operations.
+
+</details>
+
+
+<details>
+<summary><strong>24-09-2026 — Java Methods</strong></summary>
+
+### What I have done
+- Continued learning **Java Methods**.
+- Completed **Java Methods Level 3** practice programs.
+- Practiced methods involving number checking, number classification, OTP generation, calendar operations, geometry calculations, employee bonus calculation, student scorecards, and matrix operations.
+- Practiced breaking complex problems into reusable methods with parameters and return values.
+- Followed best programming practices including proper naming conventions, meaningful method names, comments for logical blocks, input validation, indentation, and code reusability.
+- Compiled and pushed the Java Methods Level 3 programs to GitHub.
+
+### What I will do
+- Start learning **Java Strings**.
+- Complete the provided Java Strings Level 1, Level 2, and Level 3 practice programs.
+- Continue improving problem-solving skills through hands-on practice.
+
+### Issues faced
+- No major issues faced.
+- Practiced debugging and compilation while working with methods, arrays, strings, and matrix operations.
+
+</details>
+
+
+<details>
 <summary><strong>23-09-2026 — Java Methods</strong></summary>
 
 ### What I have done
