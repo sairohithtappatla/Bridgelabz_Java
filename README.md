@@ -1,6 +1,336 @@
 # 📅 Daily Progress
 
 <details>
+<summary><strong>06-10-2026 — Week 02 OOP Practice & Repository Update</strong></summary>
+
+### What I have done
+
+- Continued hands-on practice for **Week 02 - Object-Oriented Programming**.
+- Reviewed and practiced the OOP concepts covered during the previous days.
+- Continued organizing the Java programs in the GitHub repository according to the required topic-wise structure.
+- Reviewed and refined implementations for:
+  - Object-Oriented Programming Fundamentals
+  - Constructors
+  - Instance vs. Class Variables
+  - Access Modifiers
+  - `this`, `static`, `final`, and `instanceof`
+  - Object-Oriented Design
+  - Inheritance
+  - Encapsulation
+  - Interfaces
+  - Abstract Classes
+  - Polymorphism
+- Continued compiling, debugging, testing, and organizing the practice programs.
+
+### What I will do
+
+- Continue practicing the Week 02 OOP concepts.
+- Strengthen understanding of inheritance, encapsulation, interfaces, abstract classes, and polymorphism.
+- Continue improving code quality and following Java programming best practices.
+- Prepare for upcoming reviews and assignments.
+
+### Issues faced
+
+- Encountered and resolved compilation issues while organizing multiple inheritance and OOP practice programs.
+- Practiced debugging class naming, inheritance relationships, and compilation issues across multiple Java files.
+
+</details>
+
+
+<details>
+<summary><strong>05-10-2026 — OOP Practice & Implementation</strong></summary>
+
+### What I have done
+
+- Continued hands-on practice with **Object-Oriented Programming** concepts.
+- Practiced and implemented:
+  - Inheritance
+  - Single-Level Inheritance
+  - Multilevel Inheritance
+  - Hierarchical Inheritance
+  - Hybrid Inheritance using interfaces
+  - Encapsulation
+  - Polymorphism
+  - Interfaces
+  - Abstract Classes
+- Implemented the assigned inheritance and OOP problem statements.
+- Organized the programs into topic-specific folders in the GitHub repository.
+- Practiced compiling multiple Java programs together and resolving class naming and inheritance-related compilation issues.
+- Applied programming practices such as:
+  - Encapsulation using private fields
+  - Getter and setter methods
+  - Method overriding
+  - `@Override`
+  - Abstract classes
+  - Interfaces
+  - Polymorphism
+  - Proper class and method naming
+  - Validation where required
+
+### What I will do
+
+- Continue reviewing the implemented OOP programs.
+- Strengthen the understanding of how inheritance, interfaces, abstract classes, encapsulation, and polymorphism work together.
+- Continue practicing the assigned problem statements.
+
+### Issues faced
+
+- Faced duplicate class-name conflicts when compiling multiple independent practice programs together.
+- Resolved the conflicts by using unique supporting class names while preserving the intended inheritance relationships.
+- Practiced debugging compilation errors and validating the complete repository structure.
+
+</details>
+
+
+<details>
+<summary><strong>04-10-2026 — OOP Practice & Object-Oriented Design</strong></summary>
+
+### What I have done
+
+- Continued practicing **Object-Oriented Design and OOP concepts**.
+- Worked on Object-Oriented Design problem statements involving:
+  - Association
+  - Aggregation
+  - Composition
+  - Class relationships
+  - Object interactions
+- Practiced designing classes based on real-world relationships.
+- Implemented the assigned Object-Oriented Design practice problems.
+- Compiled and tested the Java programs.
+- Continued maintaining the required GitHub repository structure.
+
+### What I will do
+
+- Continue with the remaining Week 02 OOP concepts.
+- Practice inheritance, encapsulation, interfaces, abstract classes, and polymorphism.
+
+### Issues faced
+
+- Understanding and implementing relationships between multiple classes required additional practice.
+- Practiced debugging object interactions and class relationships during implementation.
+
+</details>
+
+
+<details>
+<summary><strong>03-10-2026 — OOP Keywords & Practice</strong></summary>
+
+### What I have done
+
+- Continued practicing Java OOP concepts related to:
+  - `this`
+  - `static`
+  - `final`
+  - `instanceof`
+- Practiced the difference between instance members and class/static members.
+- Practiced constructors and object initialization.
+- Implemented the assigned Level 1 lab practice problems.
+- Compiled and tested the programs.
+- Continued organizing the programs according to the required repository structure.
+
+### What I will do
+
+- Continue with Object-Oriented Design and related OOP concepts.
+- Practice the concepts through the assigned problem statements.
+
+### Issues faced
+
+- Required additional practice to clearly understand the behavior of `this`, `static`, `final`, and `instanceof` in different situations.
+
+</details>
+
+
+<details>
+<summary><strong>02-10-2026 — Java Constructors & Class Concepts</strong></summary>
+
+### What I have done
+
+- Continued learning **Java Constructors, Instance vs. Class Variables, and Access Modifiers**.
+- Practiced:
+  - Default constructors
+  - Parameterized constructors
+  - Constructor overloading
+  - Constructor chaining
+  - `this()` and `this`
+  - Instance variables
+  - Class/static variables
+  - Access modifiers
+- Completed and practiced the assigned Java Constructor and related Level 1 lab problems.
+- Compiled and tested the Java programs.
+- Continued following proper Java naming and coding practices.
+
+### What I will do
+
+- Continue with the next OOP concepts.
+- Practice the concepts through the assigned lab problems.
+
+### Issues faced
+
+- Required additional practice to understand constructor chaining and the difference between instance and class-level members.
+
+</details>
+
+
+<details>
+<summary><strong>01-10-2026 — Object-Oriented Design</strong></summary>
+
+### What I have done
+
+- Started learning **Object-Oriented Design and Class Diagrams**.
+- Studied how real-world systems can be represented using classes and objects.
+- Practiced:
+  - Classes
+  - Objects
+  - Relationships between objects
+  - Association
+  - Aggregation
+  - Composition
+  - Object interactions
+- Implemented the assigned **Object-Oriented Design Principles** practice problems.
+- Compiled and tested the implementations.
+
+### What I will do
+
+- Continue practicing Object-Oriented Design.
+- Move into inheritance and related OOP concepts.
+
+### Issues faced
+
+- Translating real-world relationships into class structures required additional design practice.
+</details>
+
+
+<details>
+<summary><strong>30-09-2026 — OOP Keywords</strong></summary>
+
+### What I have done
+
+- Studied the `this`, `static`, `final` keywords and the `instanceof` operator.
+- Practiced how `this` refers to the current object.
+- Practiced static members and class-level behavior.
+- Practiced final variables, methods, and classes.
+- Practiced checking object types using `instanceof`.
+- Worked on the assigned Level 1 lab practice problems.
+
+### What I will do
+
+- Continue with Object-Oriented Design and class relationship concepts.
+- Practice the assigned problems and strengthen the concepts through implementation.
+
+### Issues faced
+
+- Understanding the difference between instance-level and class-level behavior required additional hands-on practice.
+
+</details>
+
+
+<details>
+<summary><strong>29-09-2026 — Java Constructors, Instance vs. Class Variables & Access Modifiers</strong></summary>
+
+### What I have done
+
+- Continued learning **Java Constructors**.
+- Studied:
+  - Default constructors
+  - Parameterized constructors
+  - Constructor overloading
+  - Constructor chaining
+- Studied **Instance vs. Class Variables**.
+- Studied Java **Access Modifiers**.
+- Practiced the assigned Level 1 lab problems.
+- Implemented constructor-based Java programs and practiced object initialization.
+
+### What I will do
+
+- Continue with the next OOP concepts.
+- Practice `this`, `static`, `final`, and `instanceof`.
+
+### Issues faced
+
+- Required additional practice to distinguish instance variables from static/class variables and understand constructor behavior.
+</details>
+
+
+<details>
+<summary><strong>28-09-2026 — Object-Oriented Programming Fundamentals</strong></summary>
+
+### What I have done
+
+- Started **Week 02 - Object-Oriented Programming**.
+- Studied the fundamentals of Object-Oriented Programming.
+- Learned the basic concepts of:
+  - Classes
+  - Objects
+  - Encapsulation
+  - Inheritance
+  - Polymorphism
+  - Abstraction
+- Started practicing Java class and object programs.
+- Began working on the **Submission of Java Class and Object** assignment.
+
+### What I will do
+
+- Continue with Java Constructors.
+- Study Instance vs. Class Variables.
+- Study Access Modifiers.
+- Complete the assigned class and object practice problems.
+
+### Issues faced
+
+- Transitioning from procedural programming concepts to object-oriented thinking required additional practice with classes and objects.
+
+</details>
+
+
+<details>
+<summary><strong>27-09-2026 — Sunday Assignment & Practice</strong></summary>
+
+### What I have done
+
+- Used the day for **assignment work and additional Java practice**.
+- Reviewed the previously learned Core Java concepts.
+- Practiced problem-solving and implementation independently.
+- Continued preparing for the upcoming Week 02 Object-Oriented Programming topics.
+- Worked on improving code organization and repository structure.
+
+### What I will do
+
+- Begin the Week 02 Object-Oriented Programming topics.
+- Continue with Java Classes and Objects and the assigned OOP material.
+
+### Issues faced
+
+- No major issues faced.
+- Focused on strengthening previously learned concepts through additional practice.
+
+</details>
+
+
+<details>
+<summary><strong>26-09-2026 — Review Preparation, Review & Practice</strong></summary>
+
+### What I have done
+
+- Prepared for the **Java/Core Programming review**.
+- Revised the concepts covered during the previous learning sessions.
+- Attended the scheduled review.
+- Practiced additional programming problems after the review.
+- Reviewed concepts through hands-on implementation rather than relying only on theoretical preparation.
+- Continued debugging and improving Java programs based on the concepts learned so far.
+
+### What I will do
+
+- Continue strengthening Core Java fundamentals.
+- Begin the next phase of Java learning and practice.
+- Prepare for the upcoming OOP topics.
+
+### Issues faced
+
+- Review preparation required revisiting multiple concepts and identifying areas that needed additional practice.
+</details>
+
+
+<details>
 <summary><strong>25-09-2026 — Java Strings</strong></summary>
   
 ### What I have done
